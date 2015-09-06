@@ -58,7 +58,7 @@
                     <asp:TextBox ID="txtTelefonoTrabajo" runat="server" CssClass="form-control"/>
                 </div>
                 <div class="form-group">
-                    <label>Horario</label><asp:Button runat="server" CssClass="btn" ID="btnAdd" Text="+" OnClick="btnAdd_Click"/>
+                    <label>Horario</label><asp:Button runat="server" CssClass="btn" ID="btnAdd" Text="+"/>
                     <asp:GridView runat="server" ID="grvHorario" AutoGenerateColumns="False" CssClass="table">
                         <Columns>
                             <asp:TemplateField HeaderText="Días">
