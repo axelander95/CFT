@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="Centro_de_formación_tecnológica__CFT_.Account.Signup" %>
+﻿<%@ Page Title="CFT | Registro" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Signup.aspx.cs" Inherits="Centro_de_formación_tecnológica__CFT_.Account.Signup" %>
 <asp:Content ID="cntHead" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="cntBody" ContentPlaceHolderID="main" runat="server">
@@ -95,7 +95,8 @@
                     <label>Intereses</label>
                     <asp:CheckBoxList runat="server" ID="chlIntereses"></asp:CheckBoxList>
                 </div>
-                <asp:Button runat="server" CssClass="active btn" Text="Registrarme"/>
+                <asp:Button runat="server" CssClass="active btn" Text="Registrarme" OnClick="Unnamed1_Click"/>
+                <asp:Label runat="server" ID="lblInformacion" Text=""></asp:Label>
             </div>
             </div>
         </div>

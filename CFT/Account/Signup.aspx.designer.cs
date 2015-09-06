@@ -245,5 +245,14 @@ namespace Centro_de_formación_tecnológica__CFT_.Account {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList chlIntereses;
+        
+        /// <summary>
+        /// lblInformacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInformacion;
     }
 }

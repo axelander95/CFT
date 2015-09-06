@@ -13,22 +13,31 @@ namespace CFT.Admin {
     public partial class Inscripciones {
         
         /// <summary>
-        /// ddlCursos control.
+        /// cmbOpciones control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlCursos;
+        protected global::System.Web.UI.WebControls.DropDownList cmbOpciones;
         
         /// <summary>
-        /// btnGenerar control.
+        /// txtBusqueda control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGenerar;
+        protected global::System.Web.UI.WebControls.TextBox txtBusqueda;
+        
+        /// <summary>
+        /// btnBuscar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBuscar;
         
         /// <summary>
         /// grvInscripciones control.
@@ -38,14 +47,5 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grvInscripciones;
-        
-        /// <summary>
-        /// stmReportes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager stmReportes;
     }
 }

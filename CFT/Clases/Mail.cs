@@ -33,7 +33,6 @@ namespace CFT.Clases
             MailClient.EnableSsl = false;
             MailClient.UseDefaultCredentials = false;
             MailClient.Credentials = new NetworkCredential(user, token);
-            MailClient.EnableSsl = true;
             try
             {
                 MailClient.Send(msg);

@@ -15,7 +15,10 @@
 body {
     font-family: 'Open Sans', sans-serif;
 }
-
+.table td img {
+    width: 80px !important;
+    height: 50px;
+}
  #wrapper {
     width: 100%;
     background:#202020;

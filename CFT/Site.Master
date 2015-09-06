@@ -34,11 +34,11 @@
                         <div class="navbar-collapse collapse ">
                             <ul class="nav navbar-nav">
                                 <li class="active"><a href="<% Server.MapPath("~"); %>/Default.aspx">Inicio</a></li>
-                                <li><a href="#">Eventos</a></li>
-                                <li><a href="#">Cursos</a></li>
+                                <li><a href="<% Server.MapPath("~"); %>/Eventos.aspx">Eventos</a></li>
+                                <li><a href="<% Server.MapPath("~"); %>/Cursos.aspx">Cursos</a></li>
                                 <li><a href="<% Server.MapPath("~"); %>/Contactenos.aspx">Contactenos</a></li>
                                 <li><a href="#">Nosotros</a></li>
-                                <li><a href="#">Calendario</a></li>
+                                <li><a href="<% Server.MapPath("~");%>/Profile/Cuenta.aspx">Mi cuenta</a></li>
                                 <li runat="server">
                                     <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                                         <AnonymousTemplate>

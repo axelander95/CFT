@@ -18,9 +18,11 @@
                         <label>Contraseña</label>
                         <input type="password" class="form-control" id="txtPassword" runat="server" placeholder="Contraseña"/>
                     </div>
+                    <asp:Label ID="lblInformacion" runat="server" ForeColor="Red" Text=""></asp:Label>
+                    <asp:CheckBox runat="server" ID="chkRecordar" Text="Recordarme" Checked="true"/>
                     <p>¿Has olvidado tu contraseña? <a href="Recover.aspx">Recupérala.</a></p>
                     <p><a href="../Default.aspx">Volver a la página de inicio.</a></p>
-                    <asp:Button runat="server" ID="btnAcceder" Text="Acceder" CssClass="btn"/>
+                    <asp:Button runat="server" ID="btnAcceder" Text="Acceder" CssClass="btn" OnClick="btnAcceder_Click"/>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                 </div>

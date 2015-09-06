@@ -23,7 +23,9 @@ namespace CFT.Clases
             cmd.CommandType = CommandType.StoredProcedure;
             foreach (SqlParameter parameter in parameters)
                 cmd.Parameters.Add(parameter);
+            con.Open();
             int rows = cmd.ExecuteNonQuery();
+            con.Close();
             return rows;
         }
         public DataSet getData(String procedure, SqlParameter[] parameters)

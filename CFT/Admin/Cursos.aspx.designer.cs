@@ -13,13 +13,13 @@ namespace CFT.Admin {
     public partial class Cursos {
         
         /// <summary>
-        /// GridView1 control.
+        /// grvCursos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView grvCursos;
         
         /// <summary>
         /// btnAgregar control.
@@ -47,6 +47,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelar;
+        
+        /// <summary>
+        /// lblInformacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInformacion;
         
         /// <summary>
         /// txtID control.
@@ -130,13 +139,13 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtPrecioUCSG;
         
         /// <summary>
-        /// grvHorario control.
+        /// txtPrecioPublico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grvHorario;
+        protected global::System.Web.UI.WebControls.TextBox txtPrecioPublico;
         
         /// <summary>
         /// txtMaximoEstudiantes control.
@@ -209,5 +218,23 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList cmbEstado;
+        
+        /// <summary>
+        /// btnHorario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnHorario;
+        
+        /// <summary>
+        /// grvHorario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView grvHorario;
     }
 }

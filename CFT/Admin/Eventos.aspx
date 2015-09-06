@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Eventos.aspx.cs" Inherits="CFT.Admin.Eventos" %>
+﻿<%@ Page Title="CFT | Eventos" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Eventos.aspx.cs" Inherits="CFT.Admin.Eventos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -6,7 +6,7 @@
         <div class="col-lg-12">
             <div class="tabla">
                 <h1>Eventos</h1>
-                <asp:GridView ID="grvEventos" runat="server" CssClass="table" OnLoad="grvEventos_Load" OnRowCommand="grvEventos_RowCommand">
+                <asp:GridView ID="grvEventos" runat="server" CssClass="table" OnLoad="grvEventos_Load" OnRowCommand="grvEventos_RowCommand" AutoGenerateColumns="False">
                     <Columns>
                         <asp:ButtonField HeaderText="Acción" Text="Seleccionar" CommandName="select" />
                         <asp:BoundField DataField="id_evento" HeaderText="ID" />
@@ -18,7 +18,7 @@
                         <asp:BoundField DataField="fecha_evento" HeaderText="Fecha del evento" />
                         <asp:BoundField DataField="hora_inicio" HeaderText="Hora de Inicio" />
                         <asp:BoundField DataField="hora_fin" HeaderText="Hora de fin" />
-                        <asp:BoundField DataField="estado" HeaderText="Estado" />
+                        <asp:CheckBoxField DataField="estado" HeaderText="Estado" />
                     </Columns>
                 </asp:GridView>
             </div>
@@ -26,9 +26,10 @@
                 <div class="col-lg-12">
                     <div class="btn-group">
                         <asp:Button ID="btnAgregar" runat="server" Text="Agregar" CssClass="btn" OnClick="btnAgregar_Click"/>
-                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn"/>
+                        <asp:Button ID="btnAceptar" runat="server" Text="Aceptar" CssClass="btn" OnClick="btnAceptar_Click"/>
                         <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn" OnClick="btnCancelar_Click"/>
                     </div>
+                    <asp:Label runat="server" ID="lblInformacion"></asp:Label>
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="form-group">
@@ -46,6 +47,7 @@
                     <div class="form-group">
                         <label>Imagen</label>
                         <asp:FileUpload runat="server" ID="fulImagen" Enabled="False"/>
+                        <asp:Label runat="server" ID="lblImagen"></asp:Label>
                     </div>
                     <div class="form-group">
                         <label>Hora de inicio</label>
@@ -69,7 +71,6 @@
                         </asp:RadioButtonList>
                     </div>
                 </div>
-                <asp:Label Text="" ID="lblEstado" runat="server"></asp:Label>
             </div>
         </div>
     </div>

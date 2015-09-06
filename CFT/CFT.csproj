@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.6.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.6\lib\itextsharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -58,8 +62,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Account\Congratulations.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Signup.aspx" />
+    <Content Include="Account\Verify.aspx" />
     <Content Include="Admin\assets\css\bootstrap.css" />
     <Content Include="Admin\assets\css\custom.css" />
     <Content Include="Admin\assets\css\font-awesome.css" />
@@ -98,7 +104,9 @@
     <Content Include="css\font-awesome.css" />
     <Content Include="css\overwrite.css" />
     <Content Include="css\style.css" />
+    <Content Include="Cursos.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="Eventos.aspx" />
     <Content Include="fonts\customicon\Icons.svg" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="img\avatar.png" />
@@ -145,12 +153,20 @@
     <Content Include="js\quicksand\jquery.quicksand.js" />
     <Content Include="js\quicksand\setting.js" />
     <Content Include="js\validate.js" />
+    <Content Include="Profile\Cuenta.aspx" />
     <Content Include="skins\default.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\Congratulations.aspx.cs">
+      <DependentUpon>Congratulations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Congratulations.aspx.designer.cs">
+      <DependentUpon>Congratulations.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,6 +180,13 @@
     </Compile>
     <Compile Include="Account\Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Verify.aspx.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Verify.aspx.designer.cs">
+      <DependentUpon>Verify.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -218,12 +241,33 @@
     <Compile Include="Clases\General.cs" />
     <Compile Include="Clases\Mail.cs" />
     <Compile Include="Clases\MailCredentials.cs" />
+    <Compile Include="Cursos.aspx.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cursos.aspx.designer.cs">
+      <DependentUpon>Cursos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eventos.aspx.cs">
+      <DependentUpon>Eventos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eventos.aspx.designer.cs">
+      <DependentUpon>Eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Cuenta.aspx.cs">
+      <DependentUpon>Cuenta.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Cuenta.aspx.designer.cs">
+      <DependentUpon>Cuenta.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
@@ -253,6 +297,9 @@
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="img\logos\Thumbs.db" />
     <Content Include="img\Thumbs.db" />
+    <Content Include="packages.config" />
+    <Content Include="Account\Web.config" />
+    <Content Include="Profile\Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -261,7 +308,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Profile\" />
+    <Folder Include="Uploads\Cursos\" />
+    <Folder Include="Uploads\Eventos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
