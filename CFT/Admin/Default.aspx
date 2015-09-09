@@ -4,7 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row containter">
         <div class="col-lg-12">
-            <h2>Últimas inscripciones</h2>
+            <h2>Escritorio</h2>
         </div>
         <div class="col-lg-12">
             <div class="col-lg-6 col-lg-6 col-sm-6">
@@ -12,6 +12,12 @@
             </div>
             <div class="col-lg-6 col-lg-6 col-sm-6">
                 <h3>Últimas inscripciones</h3>
+            </div>
+            <div class="col-lg-6 col-lg-6 col-sm-6">
+                <h3>Últimos usuarios registrados</h3>
+            </div>
+            <div class="col-lg-6 col-lg-6 col-sm-6">
+                <h3>Estadísticas</h3>
             </div>
         </div>
     </div>
