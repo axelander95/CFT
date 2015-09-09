@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="form-group">
+                <div class="form-group" id="divPregunta" runat="server">
                     <label>Responde a la pregunta secreta: </label>
                     <asp:Label runat="server" ID="lblPregunta"></asp:Label>
                     <asp:TextBox runat="server" ID="txtRespuesta" CssClass="form-control" placeholder="Respuesta secreta"></asp:TextBox>
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
-                <div class="form-group">
+                <div class="form-group" id="divContrasena" runat="server">
                     <label>Nueva contraseña</label>
                     <asp:TextBox TextMode="Password" runat="server" placeholder="***********" ID="txtContrasena" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator Enabled="false" runat="server" ID="rfvContrasena" ControlToValidate="txtContrasena" ErrorMessage="* Ingrese la nueva contraseña" ForeColor="Red"></asp:RequiredFieldValidator>

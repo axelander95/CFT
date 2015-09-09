@@ -45,6 +45,7 @@ namespace CFT.Admin
             grvHorario.Enabled = true;
             btnAgregar.Enabled = true;
             chlCertificados.Enabled = true;
+            btnAgregar.Enabled = true;
         }
         protected void AddRow()
         {

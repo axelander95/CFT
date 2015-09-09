@@ -24,9 +24,9 @@
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="btn-group col-lg-12">
-                    <asp:Button runat="server" Text="Agregar" CssClass="btn" OnClick="Unnamed1_Click" ID="btnAgregar"></asp:Button>
+                    <asp:Button runat="server" Text="Agregar" CssClass="btn" OnClick="Unnamed1_Click" ID="btnAgregar" CausesValidation="false"></asp:Button>
                     <asp:Button runat="server" Text="Aceptar" CssClass="btn" Enabled="False" OnClick="Unnamed2_Click" ID="btnAceptar"></asp:Button>
-                    <asp:Button runat="server" Text="Cancelar" CssClass="btn" Enabled="False" OnClick="Unnamed3_Click" ID="btnCancelar"></asp:Button>
+                    <asp:Button runat="server" Text="Cancelar" CssClass="btn" Enabled="False" OnClick="Unnamed3_Click" ID="btnCancelar" CausesValidation="false"></asp:Button>
             </div>
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <div class="form-group">
