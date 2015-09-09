@@ -43,6 +43,8 @@ namespace CFT.Admin
             cmbProfesion.Enabled = true;
             rblEstado.Enabled = true;
             grvHorario.Enabled = true;
+            btnAgregar.Enabled = true;
+            chlCertificados.Enabled = true;
         }
         protected void AddRow()
         {
@@ -51,12 +53,12 @@ namespace CFT.Admin
             row = dt.NewRow();
             foreach (GridViewRow r in grvHorario.Rows)
             {
-                DropDownList ddl = ( DropDownList ) r.FindControl("cmbDias");
-                TextBox desde = (TextBox)r.FindControl("txtDesde");
-                TextBox hasta = (TextBox)r.FindControl("txtHasta");
-                dt.Rows[r.RowIndex]["cmbDias"] = ddl.SelectedValue;
-                dt.Rows[r.RowIndex]["txtDesde"] = desde.Text;
-                dt.Rows[r.RowIndex]["txtHasta"] = hasta.Text;
+                DropDownList ddl = ( DropDownList ) r.FindControl("id_dia");
+                TextBox desde = (TextBox)r.FindControl("dese");
+                TextBox hasta = (TextBox)r.FindControl("hasta");
+                dt.Rows[r.RowIndex]["id_dia"] = ddl.SelectedValue;
+                dt.Rows[r.RowIndex]["desde"] = desde.Text;
+                dt.Rows[r.RowIndex]["hasta"] = hasta.Text;
             }
             dt.Rows.Add(row);
             ViewState["GridView"] = dt;
@@ -67,9 +69,9 @@ namespace CFT.Admin
         {
             DataTable dt = new DataTable();
             DataRow row = null;
-            dt.Columns.Add(new DataColumn("cmbDias"));
-            dt.Columns.Add(new DataColumn("txtDesde"));
-            dt.Columns.Add(new DataColumn("txtHasta"));
+            dt.Columns.Add(new DataColumn("id_dia"));
+            dt.Columns.Add(new DataColumn("desde"));
+            dt.Columns.Add(new DataColumn("hasta"));
             dt.Columns.Add(new DataColumn("btnEliminar"));
             row = dt.NewRow();
             dt.Rows.Add(row);
@@ -82,7 +84,7 @@ namespace CFT.Admin
         {
             try
             {
-                DropDownList ddl = (DropDownList)e.Row.FindControl("cmbDias");
+                DropDownList ddl = (DropDownList)e.Row.FindControl("id_dia");
                 Database db = new Database();
                 ddl.DataSource = db.getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] { new SqlParameter("@tabla", "tb_dia") });
                 ddl.DataTextField = "descripcion";
@@ -115,7 +117,8 @@ namespace CFT.Admin
 
         protected void GridView1_Load(object sender, EventArgs e)
         {
-            LoadDocentes();
+            if (!IsPostBack)
+                LoadDocentes();
         }
         protected void LoadDocentes()
         {
@@ -190,21 +193,26 @@ namespace CFT.Admin
                     txtID.Text = row.Tables[0].Rows[0]["id_docente"].ToString();
                     foreach(GridViewRow r in grvHorario.Rows)
                     {
-                        DropDownList ddl = (DropDownList)r.FindControl("cmbDias");
-                        TextBox desde = (TextBox)r.FindControl("txtDesde");
-                        TextBox hasta = (TextBox)r.FindControl("txtHasta");
+                        DropDownList ddl = (DropDownList)r.FindControl("id_dia");
+                        TextBox desde = (TextBox)r.FindControl("desde");
+                        TextBox hasta = (TextBox)r.FindControl("hasta");
                         int ans = db.ExecuteSQL("INSERTA_HORARIO_DOCENTE", new SqlParameter[] {
                             new SqlParameter("@id_docente", txtID.Text),
                             new SqlParameter("@id_dia", ddl.SelectedValue),
                             new SqlParameter("@desde", desde.Text),
                             new SqlParameter("@hasta", hasta.Text)
                         });
-                        if (ans > 0)
-                        {
-                            LoadDocentes();
-                            Clear();
-                        }
                     }
+                    for (int i = 0; i<chlCertificados.Items.Count -1; i++)
+                    {
+                        if (chlCertificados.Items[i].Selected)
+                        {
+                            int r = db.ExecuteSQL("INSERTA_CERTIFICACION_DOCENTE", new SqlParameter[] { new SqlParameter("@id_docente", txtID.Text),
+                                 new SqlParameter("@id_certificacion", chlCertificados.Items[i].Value )});
+                        }   
+                    }
+                    LoadDocentes();
+                    Clear();
                 }
             }
             catch (Exception ex)
@@ -248,6 +256,8 @@ namespace CFT.Admin
             InitialRow();
             grvHorario.Enabled = false;
             lblMensaje.Text = string.Empty;
+            chlCertificados.SelectedIndex = -1;
+            chlCertificados.Enabled = false;
         }
 
         protected void grvDocentes_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -278,12 +288,41 @@ namespace CFT.Admin
                         rblEstado.SelectedValue = (bool.Parse(row["estado"].ToString())) ? "1" : "0";
                         txtExperiencia.Value = row["experiencia"].ToString();
                         Enable();
+                        ViewState["GridView"] = new Database().getData("SELECCIONA_REGISTRO_ESPECIFICO", new SqlParameter[] {
+                            new SqlParameter("@tabla", "tb_profesor_dia"), new SqlParameter("@columna", "id_docente"),
+                            new SqlParameter("@dato", txtID.Text)
+                        }).Tables[0];
+                        grvHorario.DataSource = (DataTable)ViewState["GridView"];
+                        grvHorario.DataBind();
+                        DataTable dt = new Database().getData("SELECCIONA_REGISTRO_ESPECIFICO", new SqlParameter[] {
+                            new SqlParameter("@tabla", "tb_docente_certificacion"), new SqlParameter("@columna", "id_docente"),
+                            new SqlParameter("@dato", txtID.Text)
+                        }).Tables[0];
+                        for (int i = 0; i< chlCertificados.Items.Count - 1; i++)
+                        {
+                            foreach(DataRow r in dt.Rows)
+                                if (int.Parse(chlCertificados.Items[i].Value) == int.Parse(r["id_certificacion"].ToString()))
+                                    chlCertificados.Items[i].Selected = true;
+                        }
                     }
                 }
                 catch (Exception ex)
                 {
-                    
+                    lblMensaje.Text = ex.Message;
                 }
+            }
+        }
+
+        protected void chlCertificados_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                chlCertificados.DataSource = new Database().getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] {
+                    new SqlParameter("@tabla", "tb_certificacion")
+                }).Tables[0];
+                chlCertificados.DataTextField = "descripcion";
+                chlCertificados.DataValueField = "id_certificacion";
+                chlCertificados.DataBind();
             }
         }
     }

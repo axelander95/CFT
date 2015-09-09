@@ -55,7 +55,7 @@ namespace Centro_de_formación_tecnológica__CFT_.Account
             }
             catch (Exception ex)
             {
-                lblCorreoElectronico.InnerText = ex.Message;
+                lblInformacion.Text = ex.Message;
             }
         }
         protected void LoadTipoIdentificacion()

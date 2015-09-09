@@ -35,7 +35,7 @@
   <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="btn btn-danger square-btn-adjust">Salir</a> </div>
+font-size: 16px;"> Último acceso <% DateTime.Today.ToString(); %> &nbsp; <a href="../Default.aspx" class="btn btn-danger square-btn-adjust">Salir</a> </div>
         </nav>   
            <!-- /. NAV TOP  -->
                 <nav class="navbar-default navbar-side" role="navigation">
@@ -62,7 +62,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="login.html" class="
                         <a  href="Eventos.aspx"><i class="fa fa-table fa-3x"></i> Eventos</a>
                     </li>
                     <li  >
-                        <a  href="#"><i class="fa fa-edit fa-3x"></i> Usuarios </a>
+                        <a  href="Usuarios.aspx"><i class="fa fa-edit fa-3x"></i> Usuarios </a>
                     </li>				
 					 <li  >
                         <a   href=" #"><i class="fa fa-bolt fa-3x"></i> Boletines</a>

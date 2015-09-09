@@ -36,6 +36,10 @@ namespace Centro_de_formación_tecnológica__CFT_.Account
                         FormsAuthentication.SetAuthCookie(txtUsuario.Value, chkRecordar.Checked);
                         Response.Redirect("~/Default.aspx");
                     }
+                    else
+                    {
+                        lblInformacion.Text = "Credenciales inválidas";
+                    }
                 }
             }
             catch (Exception ex)

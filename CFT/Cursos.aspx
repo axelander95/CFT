@@ -7,10 +7,10 @@
             <div class="col-lg-12">
                 <h1>Estos son los cursos que CFT puede ofrecerte</h1>
                 <asp:DataList ID="dlEventos" runat="server" Width="100%" CellPadding="4" ForeColor="#333333" OnItemCommand="dlEventos_ItemCommand">
-                    <AlternatingItemStyle BackColor="White" />
-                    <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-                    <ItemStyle BackColor="#EFF3FB" />
+                    <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
+                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                    <ItemStyle BackColor="#F7F6F3" ForeColor="#333333" />
                         <ItemTemplate>
                             <table class="table">
                                 <tr>
@@ -33,7 +33,7 @@
                                 </tr>
                             </table>
                         </ItemTemplate>
-                    <SelectedItemStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
+                    <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
     </asp:DataList>
             </div>
         </div>

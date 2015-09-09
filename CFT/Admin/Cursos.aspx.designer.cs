@@ -76,6 +76,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
+        /// rfvNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        
+        /// <summary>
         /// txtDescripcion control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        
+        /// <summary>
+        /// rfvDescripcion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
         
         /// <summary>
         /// cmbCategoria control.
@@ -94,6 +112,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.DropDownList cmbCategoria;
         
         /// <summary>
+        /// rfvCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategoria;
+        
+        /// <summary>
         /// txtObjetivo control.
         /// </summary>
         /// <remarks>
@@ -101,6 +128,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObjetivo;
+        
+        /// <summary>
+        /// rfvObjetivo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvObjetivo;
         
         /// <summary>
         /// txtDirigidoA control.
@@ -112,6 +148,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtDirigidoA;
         
         /// <summary>
+        /// rfvDirigidoA control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDirigidoA;
+        
+        /// <summary>
         /// txtPrerequisitos control.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtPrerequisitos;
+        
+        /// <summary>
+        /// rfvPrerequisitos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrerequisitos;
         
         /// <summary>
         /// txtAprendizaje control.
@@ -130,6 +184,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtAprendizaje;
         
         /// <summary>
+        /// rfvAprendizaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvAprendizaje;
+        
+        /// <summary>
         /// txtPrecioUCSG control.
         /// </summary>
         /// <remarks>
@@ -137,6 +200,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPrecioUCSG;
+        
+        /// <summary>
+        /// rfvPrecioUCSG control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrecioUCSG;
         
         /// <summary>
         /// txtPrecioPublico control.
@@ -148,6 +220,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtPrecioPublico;
         
         /// <summary>
+        /// rfvPrecioPublico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvPrecioPublico;
+        
+        /// <summary>
         /// txtMaximoEstudiantes control.
         /// </summary>
         /// <remarks>
@@ -155,6 +236,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMaximoEstudiantes;
+        
+        /// <summary>
+        /// rfvMaximoEstudiantes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMaximoEstudiantes;
         
         /// <summary>
         /// txtMinimoEstudiantes control.
@@ -166,6 +256,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtMinimoEstudiantes;
         
         /// <summary>
+        /// rfvMinimoEstudiantes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvMinimoEstudiantes;
+        
+        /// <summary>
         /// cmbDocente control.
         /// </summary>
         /// <remarks>
@@ -173,6 +272,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbDocente;
+        
+        /// <summary>
+        /// rfvDocente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDocente;
         
         /// <summary>
         /// rblCertificacion control.
@@ -184,6 +292,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.RadioButtonList rblCertificacion;
         
         /// <summary>
+        /// rfvCertificacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCertificacion;
+        
+        /// <summary>
         /// txtHoras control.
         /// </summary>
         /// <remarks>
@@ -191,6 +308,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtHoras;
+        
+        /// <summary>
+        /// rfvHoras control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvHoras;
         
         /// <summary>
         /// calFechaInicio control.
@@ -209,6 +335,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload fulImagen;
+        
+        /// <summary>
+        /// rfvImagen control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvImagen;
         
         /// <summary>
         /// cmbEstado control.

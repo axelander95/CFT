@@ -13,10 +13,12 @@
                     <div class="form-group">
                         <label >Nombre de usuario</label>
                         <input type="text" class="form-control" id="txtUsuario" runat="server" placeholder="Nombre de usuario" />
+                        <asp:RequiredFieldValidator ID="rfvUsuario" runat="server" ControlToValidate="txtUsuario" ErrorMessage="* Se requiere un nombre de usuario" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                     <div class="form-group">
                         <label>Contraseña</label>
                         <input type="password" class="form-control" id="txtPassword" runat="server" placeholder="Contraseña"/>
+                        <asp:RequiredFieldValidator ID="rfvPassword" runat="server" ControlToValidate="txtPassword" ErrorMessage="* Se requiere la contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
                     </div>
                     <asp:Label ID="lblInformacion" runat="server" ForeColor="Red" Text=""></asp:Label>
                     <asp:CheckBox runat="server" ID="chkRecordar" Text="Recordarme" Checked="true"/>

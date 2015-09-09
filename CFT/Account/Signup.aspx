@@ -2,7 +2,7 @@
 <asp:Content ID="cntHead" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="cntBody" ContentPlaceHolderID="main" runat="server">
-    <div class="container">
+    <div class="row container">
         <div class="col-lg-12">
             <h1>Registro de usuarios</h1>
             <p>Adquiere una cuenta y disfruta de todos los beneficios de ser un usuario de nuestra comunidad, completa el siguiente formulario de registro.</p>
@@ -61,7 +61,6 @@
                     <label>Correo electrónico</label>
                     <input type="text" class="form-control" placeholder="Correo electrónico" runat="server" id="txtCorreoElectronico"/>
                     <asp:RequiredFieldValidator runat="server" ID="rfvCorreoElectronico" ControlToValidate="txtCorreoElectronico" ForeColor="Red">* Se requiere un correo electrónico válido.</asp:RequiredFieldValidator>
-                    <label id="lblCorreoElectronico" runat="server"></label>
                 </div>
                 <div class="form-group">
                     <label>Contraseña</label>

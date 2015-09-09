@@ -64,6 +64,7 @@
   <ItemGroup>
     <Content Include="Account\Congratulations.aspx" />
     <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Recover.aspx" />
     <Content Include="Account\Signup.aspx" />
     <Content Include="Account\Verify.aspx" />
     <Content Include="Admin\assets\css\bootstrap.css" />
@@ -92,6 +93,8 @@
     <Content Include="Admin\Docentes.aspx" />
     <Content Include="Admin\Eventos.aspx" />
     <Content Include="Admin\Inscripciones.aspx" />
+    <Content Include="Admin\Usuarios.aspx" />
+    <Content Include="Contacto.aspx" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\custom-fonts.css" />
@@ -153,6 +156,7 @@
     <Content Include="js\quicksand\jquery.quicksand.js" />
     <Content Include="js\quicksand\setting.js" />
     <Content Include="js\validate.js" />
+    <Content Include="Nosotros.aspx" />
     <Content Include="Profile\Cuenta.aspx" />
     <Content Include="skins\default.css" />
     <Content Include="Web.config">
@@ -173,6 +177,13 @@
     </Compile>
     <Compile Include="Account\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Recover.aspx.cs">
+      <DependentUpon>Recover.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Recover.aspx.designer.cs">
+      <DependentUpon>Recover.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
@@ -237,10 +248,24 @@
     <Compile Include="Admin\Inscripciones.aspx.designer.cs">
       <DependentUpon>Inscripciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Usuarios.aspx.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Usuarios.aspx.designer.cs">
+      <DependentUpon>Usuarios.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clases\Database.cs" />
     <Compile Include="Clases\General.cs" />
     <Compile Include="Clases\Mail.cs" />
     <Compile Include="Clases\MailCredentials.cs" />
+    <Compile Include="Contacto.aspx.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contacto.aspx.designer.cs">
+      <DependentUpon>Contacto.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Cursos.aspx.cs">
       <DependentUpon>Cursos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -261,6 +286,13 @@
     </Compile>
     <Compile Include="Eventos.aspx.designer.cs">
       <DependentUpon>Eventos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nosotros.aspx.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nosotros.aspx.designer.cs">
+      <DependentUpon>Nosotros.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profile\Cuenta.aspx.cs">
       <DependentUpon>Cuenta.aspx</DependentUpon>

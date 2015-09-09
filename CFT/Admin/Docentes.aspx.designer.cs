@@ -76,6 +76,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtNombre;
         
         /// <summary>
+        /// rfvNombre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombre;
+        
+        /// <summary>
         /// txtCedula control.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtCedula;
         
         /// <summary>
+        /// rfvCedula control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCedula;
+        
+        /// <summary>
         /// txtDireccion control.
         /// </summary>
         /// <remarks>
@@ -92,6 +110,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDireccion;
+        
+        /// <summary>
+        /// rfvDireccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDireccion;
         
         /// <summary>
         /// txtTelefonoCasa control.
@@ -130,6 +157,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.TextBox txtCorreoElectronico;
         
         /// <summary>
+        /// rfvCorreoElectronico control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCorreoElectronico;
+        
+        /// <summary>
         /// cmbProfesion control.
         /// </summary>
         /// <remarks>
@@ -137,6 +173,15 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList cmbProfesion;
+        
+        /// <summary>
+        /// rfvProfesion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvProfesion;
         
         /// <summary>
         /// cmbUniversidad control.
@@ -148,6 +193,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.WebControls.DropDownList cmbUniversidad;
         
         /// <summary>
+        /// rfvUniversidad control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvUniversidad;
+        
+        /// <summary>
         /// txtExperiencia control.
         /// </summary>
         /// <remarks>
@@ -157,6 +211,15 @@ namespace CFT.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlTextArea txtExperiencia;
         
         /// <summary>
+        /// rfvExperiencia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvExperiencia;
+        
+        /// <summary>
         /// rblEstado control.
         /// </summary>
         /// <remarks>
@@ -164,6 +227,24 @@ namespace CFT.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList rblEstado;
+        
+        /// <summary>
+        /// rfvEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvEstado;
+        
+        /// <summary>
+        /// chlCertificados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList chlCertificados;
         
         /// <summary>
         /// btnAdd control.

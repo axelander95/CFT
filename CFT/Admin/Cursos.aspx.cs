@@ -38,55 +38,75 @@ namespace CFT.Admin
         {
             if (e.CommandName == "Select")
             {
-                int index = int.Parse(e.CommandArgument.ToString());
-                DataSet ds = new Database().getData("SELECCIONA_REGISTRO_ESPECIFICO", new SqlParameter[] {
+                try
+                {
+                    int index = int.Parse(e.CommandArgument.ToString());
+                    DataSet ds = new Database().getData("SELECCIONA_REGISTRO_ESPECIFICO", new SqlParameter[] {
                     new SqlParameter("@tabla", "tb_curso"),
                     new SqlParameter("@columna", "id_curso"),
                     new SqlParameter("@dato", grvCursos.Rows[index].Cells[1].Text)
                 });
-                if (ds.Tables[0].Rows.Count > 0)
+                    if (ds.Tables[0].Rows.Count > 0)
+                    {
+                        DataRow row = ds.Tables[0].Rows[0];
+                        txtAprendizaje.Text = row["aprendizaje"].ToString();
+                        txtDescripcion.Text = row["descripcion"].ToString();
+                        txtDirigidoA.Text = row["dirigido_a"].ToString();
+                        txtHoras.Text = row["horas"].ToString();
+                        txtID.Text = row["id_curso"].ToString();
+                        txtMaximoEstudiantes.Text = row["maximo_estudiantes"].ToString();
+                        txtMinimoEstudiantes.Text = row["minimo_estudiantes"].ToString();
+                        txtNombre.Text = row["nombre"].ToString();
+                        txtObjetivo.Text = row["objetivo"].ToString();
+                        txtPrecioPublico.Text = row["precio_publico"].ToString();
+                        txtPrecioUCSG.Text = row["precio_ucsg"].ToString();
+                        txtPrerequisitos.Value = row["pre_requisitos"].ToString();
+                        cmbCategoria.SelectedValue = row["id_categoria"].ToString();
+                        cmbDocente.SelectedValue = row["id_docente"].ToString();
+                        cmbEstado.SelectedValue = (bool.Parse(row["estado"].ToString())) ? "1" : "0";
+                        calFechaInicio.SelectedDate = DateTime.Parse(row["fecha_inicio"].ToString());
+                        Enable();
+                    }
+                    ds = new Database().getData("SELECCIONA_REGISTRO_ESPECIFICO", new SqlParameter[] {
+                    new SqlParameter("@tabla", "tb_curso_dia"), new SqlParameter("@columna", "id_curso"),
+                    new SqlParameter("@dato", txtID.Text)
+                });
+                    grvHorario.DataSource = ds.Tables[0];
+                    grvHorario.DataBind();
+                    ViewState["GridView"] = ds.Tables[0];
+                    
+                }
+                catch(Exception ex)
                 {
-                    DataRow row = ds.Tables[0].Rows[0];
-                    txtAprendizaje.Text = row["aprendizaje"].ToString();
-                    txtDescripcion.Text = row["descripcion"].ToString();
-                    txtDirigidoA.Text = row["dirigido_a"].ToString();
-                    txtHoras.Text = row["horas"].ToString();
-                    txtID.Text = row["id_curso"].ToString();
-                    txtMaximoEstudiantes.Text = row["maximo_estudiantes"].ToString();
-                    txtMinimoEstudiantes.Text = row["minimo_estudiantes"].ToString();
-                    txtNombre.Text = row["nombre"].ToString();
-                    txtObjetivo.Text = row["objetivo"].ToString();
-                    txtPrecioPublico.Text = row["precio_publico"].ToString();
-                    txtPrecioUCSG.Text = row["precio_ucsg"].ToString();
-                    txtPrerequisitos.Value = row["pre_requisitos"].ToString();
-                    cmbCategoria.SelectedValue = row["id_categoria"].ToString();
-                    cmbDocente.SelectedValue = row["id_docente"].ToString();
-                    cmbEstado.SelectedValue = (bool.Parse(row["estado"].ToString())) ? "1" : "0";
-                    calFechaInicio.SelectedDate = DateTime.Parse(row["fecha_inicio"].ToString());
-                    Enable();
+                    lblInformacion.Text = ex.Message;
                 }
             }
         }
 
         protected void cmbCategoria_Load(object sender, EventArgs e)
         {
-            try
+            if (!IsPostBack)
             {
-                cmbCategoria.DataSource = new Database().getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] {
+                try
+                {
+                    cmbCategoria.DataSource = new Database().getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] {
                     new SqlParameter("@tabla", "tb_categoria")
                 }).Tables[0];
-                cmbCategoria.DataTextField = "descripcion";
-                cmbCategoria.DataValueField = "id_categoria";
-                cmbCategoria.DataBind();
-            }
-            catch(Exception ex)
-            {
-                lblInformacion.Text = ex.Message;
+                    cmbCategoria.DataTextField = "descripcion";
+                    cmbCategoria.DataValueField = "id_categoria";
+                    cmbCategoria.DataBind();
+                }
+                catch (Exception ex)
+                {
+                    lblInformacion.Text = ex.Message;
+                }
             }
         }
 
         protected void cmbDocente_Load(object sender, EventArgs e)
         {
+                if (!IsPostBack)
+            {
                 try
                 {
                     cmbDocente.DataSource = new Database().getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] {
@@ -100,6 +120,7 @@ namespace CFT.Admin
                 {
                     lblInformacion.Text = ex.Message;
                 }
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -111,9 +132,9 @@ namespace CFT.Admin
         {
             DataTable dt = new DataTable();
             DataRow row = null;
-            dt.Columns.Add(new DataColumn("cmbDias"));
-            dt.Columns.Add(new DataColumn("txtDesde"));
-            dt.Columns.Add(new DataColumn("txtHasta"));
+            dt.Columns.Add(new DataColumn("id_dia"));
+            dt.Columns.Add(new DataColumn("desde"));
+            dt.Columns.Add(new DataColumn("hasta"));
             dt.Columns.Add(new DataColumn("btnEliminar"));
             row = dt.NewRow();
             dt.Rows.Add(row);
@@ -197,7 +218,7 @@ namespace CFT.Admin
         {
             try
             {
-                DropDownList ddl = (DropDownList)e.Row.FindControl("cmbDias");
+                DropDownList ddl = (DropDownList)e.Row.FindControl("id_dia");
                 Database db = new Database();
                 ddl.DataSource = db.getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] { new SqlParameter("@tabla", "tb_dia") });
                 ddl.DataTextField = "descripcion";
@@ -221,12 +242,12 @@ namespace CFT.Admin
             row = dt.NewRow();
             foreach (GridViewRow r in grvHorario.Rows)
             {
-                DropDownList ddl = (DropDownList)r.FindControl("cmbDias");
-                TextBox desde = (TextBox)r.FindControl("txtDesde");
-                TextBox hasta = (TextBox)r.FindControl("txtHasta");
-                dt.Rows[r.RowIndex]["cmbDias"] = ddl.SelectedValue;
-                dt.Rows[r.RowIndex]["txtDesde"] = desde.Text;
-                dt.Rows[r.RowIndex]["txtHasta"] = hasta.Text;
+                DropDownList ddl = (DropDownList)r.FindControl("id_dia");
+                TextBox desde = (TextBox)r.FindControl("desde");
+                TextBox hasta = (TextBox)r.FindControl("desde");
+                dt.Rows[r.RowIndex]["id_dia"] = ddl.SelectedValue;
+                dt.Rows[r.RowIndex]["desde"] = desde.Text;
+                dt.Rows[r.RowIndex]["hasta"] = hasta.Text;
             }
             dt.Rows.Add(row);
             ViewState["GridView"] = dt;
@@ -283,11 +304,11 @@ namespace CFT.Admin
                     txtID.Text = row.Tables[0].Rows[0]["id_curso"].ToString();
                     foreach (GridViewRow r in grvHorario.Rows)
                     {
-                        DropDownList ddl = (DropDownList)r.FindControl("cmbDias");
-                        TextBox desde = (TextBox)r.FindControl("txtDesde");
-                        TextBox hasta = (TextBox)r.FindControl("txtHasta");
+                        DropDownList ddl = (DropDownList)r.FindControl("id_dia");
+                        TextBox desde = (TextBox)r.FindControl("desde");
+                        TextBox hasta = (TextBox)r.FindControl("hasta");
                         int ans = db.ExecuteSQL("INSERTA_HORARIO_CURSO", new SqlParameter[] {
-                            new SqlParameter("@id_docente", txtID.Text),
+                            new SqlParameter("@id_curso", txtID.Text),
                             new SqlParameter("@id_dia", ddl.SelectedValue),
                             new SqlParameter("@desde", desde.Text),
                             new SqlParameter("@hasta", hasta.Text)
