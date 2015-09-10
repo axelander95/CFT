@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+using CFT.Clases;
 
 namespace CFT.Admin
 {
@@ -11,7 +7,27 @@ namespace CFT.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                try {
+                    LoadUsuarios();
+                    LoadInscripciones();
+                }
+                catch(Exception ex)
+                {
+                    Response.Write(ex.Message);
+                }
+            }
+        }
+        private void LoadUsuarios()
+        {
+            grvUsuarios.DataSource = new Database().getData("ULTIMOS_USUARIOS", new System.Data.SqlClient.SqlParameter[] { }).Tables[0];
+            grvUsuarios.DataBind();
+        }
+        private void LoadInscripciones()
+        {
+            grvInscripciones.DataSource = new Database().getData("ULTIMAS_INSCRIPCIONES", new System.Data.SqlClient.SqlParameter[] { }).Tables[0];
+            grvInscripciones.DataBind();
         }
     }
 }

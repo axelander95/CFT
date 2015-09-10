@@ -33,6 +33,7 @@ namespace CFT.Account
                     btnSolicitar.Enabled = false;
                     divPregunta.Visible = true;
                     cmbPregunta.SelectedValue = ds.Tables[0].Rows[0]["id_pregunta_secreta"].ToString();
+                    rfvRespuesta.Enabled = true;
                 }
                 else
                     lblInformacion.Text = "El usuario no existe.";
@@ -65,12 +66,44 @@ namespace CFT.Account
 
         protected void btnCambiar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                int rows = new Database().ExecuteSQL("CAMBIA_CONTRASEÑA_USUARIO", new SqlParameter[] {
+                    new SqlParameter("@nombre_usuario", txtNombreUsuario.Text), new SqlParameter("@contraseña_nueva", new General().GetHash(txtContrasena.Text)) });
+                if (rows <= 0)
+                    lblInformacion4.Text = "Error, no se produjo ningún cambio, intente nuevamente";
+                else
+                    Response.Redirect("Login.aspx");
+            }
+            catch(Exception ex)
+            {
+                lblInformacion4.Text = ex.Message;
+            }
         }
 
         protected void btnValidar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DataSet ds = new Database().getData("RESPONDE_PREGUNTA_SECRETA", new SqlParameter[] { new SqlParameter("@nombre_usuario",
+                    txtNombreUsuario.Text), new SqlParameter("@respuesta", txtRespuesta.Text)});
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    lblInformacion2.Text = string.Empty;
+                    divContrasena.Visible = true;
+                    txtRespuesta.Enabled = false;
+                    btnSolicitar.Enabled = false;
+                    btnValidar.Enabled = false;
+                    rfvContrasena.Enabled = true;
+                    cmbPregunta.SelectedValue = ds.Tables[0].Rows[0]["id_pregunta_secreta"].ToString();
+                }
+                else
+                    lblInformacion2.Text = "Respuesta incorrecta.";
+            }
+            catch(Exception ex)
+            {
+                lblInformacion2.Text = ex.Message;
+            }
         }
     }
 }

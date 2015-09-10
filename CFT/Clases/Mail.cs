@@ -10,7 +10,7 @@ namespace CFT.Clases
     {
         private int port;
         private string hostname, user, token;
-        private string remitente;
+        public string remitente;
         public Mail(string hostname, int port, string user, string token, string remitente)
         {
             this.hostname = hostname;

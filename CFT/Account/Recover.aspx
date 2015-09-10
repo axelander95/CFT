@@ -18,12 +18,13 @@
             <div class="col-lg-4 col-md-4 col-sm-12">
                 <div class="form-group" id="divPregunta" runat="server">
                     <label>Responde a la pregunta secreta: </label>
-                    <asp:DropDownList runat="server" ID="cmbPregunta" OnLoad="cmbPregunta_Load" CssClass="form-control" Enabled="False"></asp:DropDownList>
+                    <asp:DropDownList runat="server" ID="cmbPregunta" OnLoad="cmbPregunta_Load" CssClass="form-control" Enabled="false"></asp:DropDownList>
                     <div class="form-group"><asp:TextBox runat="server" ID="txtRespuesta" CssClass="form-control" placeholder="Respuesta secreta"></asp:TextBox></div>
                     <asp:RequiredFieldValidator Enabled="false" ID="rfvRespuesta" runat="server" ControlToValidate="txtRespuesta" ErrorMessage="* Responde a la pregunta secreta" ForeColor="Red"></asp:RequiredFieldValidator>
                     <div class="form-group">
-                    <asp:Button runat="server" ID="btnValidar" Text="Validar" CssClass="btn" OnClick="btnValidar_Click"/>
-                </div>
+                        <asp:Label runat="server" ID="lblInformacion2"></asp:Label>
+                        <asp:Button runat="server" ID="btnValidar" Text="Validar" CssClass="btn" OnClick="btnValidar_Click"/>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-12">
@@ -32,6 +33,8 @@
                     <asp:TextBox TextMode="Password" runat="server" placeholder="***********" ID="txtContrasena" CssClass="form-control"></asp:TextBox>
                     <asp:RequiredFieldValidator Enabled="false" runat="server" ID="rfvContrasena" ControlToValidate="txtContrasena" ErrorMessage="* Ingrese la nueva contraseña" ForeColor="Red"></asp:RequiredFieldValidator>
                     <div class="form-group">
+                        <asp:Label runat="server" ID="lblInformacion3"></asp:Label>
+                        <asp:Label runat="server" ID="lblInformacion4"></asp:Label>
                     <asp:Button runat="server" Text="Cambiar contraseña" CssClass="btn" ID="btnCambiar" OnClick="btnCambiar_Click"/>
                 </div>
                 </div>

@@ -64,45 +64,11 @@ font-size: 16px;"> Último acceso <% DateTime.Today.ToString(); %> &nbsp; <a hre
                     <li  >
                         <a  href="Usuarios.aspx"><i class="fa fa-edit fa-3x"></i> Usuarios </a>
                     </li>				
-					 <li  >
-                        <a   href=" #"><i class="fa fa-bolt fa-3x"></i> Boletines</a>
-                    </li>	
                      <li  >
                         <a   href="Inscripciones.aspx"><i class="fa fa-laptop fa-3x"></i> Inscripciones</a>
                     </li>	
 					                   
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Link<span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Link</a>
-                                    </li>
-
-                                </ul>
-                               
-                            </li>
-                        </ul>
-                      </li>  
-                  <li  >
-                        <a  href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
-                    </li>	
-                </ul>
-               
+                 
             </div>
             
         </nav>  

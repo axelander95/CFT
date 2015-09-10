@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Administrador CFT | Categorías" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Categorias.aspx.cs" Inherits="CFT.Admin.Categorias" %>
+﻿<%@ Page Title="CFT | Categorías" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Categorias.aspx.cs" Inherits="CFT.Admin.Categorias" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

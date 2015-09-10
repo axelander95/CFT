@@ -20,18 +20,33 @@ namespace CFT
         {
             if (!IsPostBack)
             {
-                try
-                {
-                    dlEventos.DataSource = new Database().getData("SELECCIONA_TABLA_GENERAL_POR_ESTADO", new SqlParameter[] {
-                        new SqlParameter("@tabla", "tb_evento")
-                    }).Tables[0];
-                    dlEventos.DataBind();
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("Error: " + ex.Message);
-                }
+                LoadFecha();
             }
+        }
+        private void LoadFecha()
+        {
+            try
+            {
+                dlEventos.DataSource = new Database().getData("SELECCIONA_EVENTO_FECHA", new SqlParameter[] {
+                        new SqlParameter("@fecha", calEventos.SelectedDate.ToShortDateString())
+                    }).Tables[0];
+                dlEventos.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Response.Write("Error: " + ex.Message);
+            }
+        }
+
+        protected void calEventos_SelectionChanged(object sender, EventArgs e)
+        {
+            LoadFecha();
+        }
+
+        protected void calEventos_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+                calEventos.SelectedDate = DateTime.Today;
         }
     }
 }

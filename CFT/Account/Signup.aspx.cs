@@ -16,12 +16,15 @@ namespace Centro_de_formación_tecnológica__CFT_.Account
         {
             try
             {
-                LoadTipoIdentificacion();
-                LoadPreguntaSecreta();
-                LoadUniversidad();
-                LoadOcupacion();
-                LoadCarrera();
-                LoadIntereses();
+                if (!IsPostBack)
+                {
+                    LoadTipoIdentificacion();
+                    LoadPreguntaSecreta();
+                    LoadUniversidad();
+                    LoadOcupacion();
+                    LoadCarrera();
+                    LoadIntereses();
+                }
             }
             catch (Exception ex)
             {

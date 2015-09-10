@@ -14,11 +14,8 @@
                     <asp:BoundField DataField="cedula" HeaderText="Cédula" />
                     <asp:BoundField DataField="direccion" HeaderText="Dirección" />
                     <asp:BoundField DataField="telefono_casa" HeaderText="Teléfono de casa" />
-                    <asp:BoundField DataField="telefono_trabajo" HeaderText="Teléfono de trabajo" />
                     <asp:BoundField DataField="celular" HeaderText="Celular" />
                     <asp:BoundField DataField="correo_electronico" HeaderText="Correo electrónico" />
-                    <asp:BoundField DataField="id_profesion" HeaderText="ID Profesión" Visible="False" />
-                    <asp:BoundField DataField="id_universidad" HeaderText="ID Universidad" Visible="False" />
                     <asp:BoundField DataField="experiencia" HeaderText="Experiencia" />
                     <asp:CheckBoxField DataField="estado" HeaderText="Estado" />
                 </Columns>

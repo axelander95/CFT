@@ -7,6 +7,12 @@
             <div class="col-lg-12">
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>Mis datos personales</h2>
+                    <ul class="list">
+                        <li><label><b>Nombre o Razón social: </b><asp:Label ID="lblNombre" runat="server"></asp:Label></label></li>
+                        <li><label><b>Correo electrónico: </b><asp:Label ID="lblCorreo" runat="server"></asp:Label></label></li>
+                        <li><label><b>Nombre de usuario: </b><asp:Label ID="lblUsuario" runat="server"></asp:Label></label></li>
+                        <li><a href="../Account/Recover.aspx">Cambiar contraseña</a></li>
+                    </ul>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h2>Mis cursos</h2>

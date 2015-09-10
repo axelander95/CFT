@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Web.Security;
 using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.SqlClient;
 using System.Data;
@@ -13,7 +11,27 @@ namespace CFT.Profile
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                try
+                {
+                    DataSet ds = new Database().getData("SELECCIONA_REGISTRO_ESPECIFICO_TEXTO", new SqlParameter[] {
+                        new SqlParameter("@tabla", "tb_usuario"), new SqlParameter("@columna", "nombre_usuario"),
+                        new SqlParameter("@dato", HttpContext.Current.User.Identity.Name)
+                    });
+                    Session["id_usuario"] = ds.Tables[0].Rows[0]["id_usuario"];
+                    Session["nombre"] = ds.Tables[0].Rows[0]["nombre_razon_social"];
+                    Session["correo_electronico"] = ds.Tables[0].Rows[0]["correo_electronico"];
+                    Session["nombre_usuario"] = ds.Tables[0].Rows[0]["nombre_usuario"];
+                    lblNombre.Text = Session["nombre"].ToString();
+                    lblCorreo.Text = Session["correo_electronico"].ToString();
+                    lblUsuario.Text = Session["nombre_usuario"].ToString();
+                }
+                catch(Exception ex)
+                {
+                    Response.Write("Error: " + ex.Message);
+                }
+            }
         }
 
         protected void grvCursos_Load(object sender, EventArgs e)

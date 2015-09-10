@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Centro_de_formación_tecnológica__CFT_.Account.Login" %>
+﻿<%@ Page Title="CFT | Acceso" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Centro_de_formación_tecnológica__CFT_.Account.Login" %>
 <asp:Content ID="cntHead" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="cntBody" ContentPlaceHolderID="main" runat="server">

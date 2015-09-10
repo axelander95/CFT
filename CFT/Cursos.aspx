@@ -1,39 +1,30 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="CFT.Cursos" %>
+﻿<%@ Page Title="CFT | Cursos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cursos.aspx.cs" Inherits="CFT.Cursos" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="main" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 col-sm-12">
                 <h1>Estos son los cursos que CFT puede ofrecerte</h1>
-                <asp:DataList ID="dlEventos" runat="server" Width="100%" CellPadding="4" ForeColor="#333333" OnItemCommand="dlEventos_ItemCommand">
-                    <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
-                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                    <ItemStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <asp:DataList ID="dlEventos" runat="server" Width="100%" CellPadding="4" ForeColor="Black" OnItemCommand="dlEventos_ItemCommand" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" GridLines="Horizontal">
+                    <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                    <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
                         <ItemTemplate>
-                            <table class="table">
-                                <tr>
-                                    <td><h2><%#Eval("nombre") %></h2></td>
-                                </tr>
-                                <tr>
-                                    <td><asp:Image runat="server" ImageUrl='<%#Eval("url_imagen") %>'/></td>
-                                </tr>
-                                <tr>
-                                    <td><p><%#Eval("descripcion") %></p></td>
-                                </tr>
-                                <tr>
-                                    <td><p><h3>Pre-requisitos del curso:<br /></h3><%#Eval("pre_requisitos") %></p></td>
-                                </tr>
-                                <tr>
-                                    <td><asp:Button runat="server" Text="Inscribirme" CssClass="btn" ID="btnInscribirme" CommandName="Inscribir"/></td>
-                                </tr>
-                                <tr>
-                                    <td><asp:Label runat="server" ID="lblID" Visible="false" Text='<%#Eval("id_curso") %>'></asp:Label></td>
-                                </tr>
-                            </table>
+                            <div class="col-lg-12">
+                                <h2><%#Eval("nombre") %></h2>
+                                <asp:Image runat="server" ImageUrl='<%#Eval("url_imagen") %>' Width="100%"/>
+                                <p><%#Eval("descripcion") %></p>
+                                <p><h3>Pre-requisitos del curso:<br /></h3><%#Eval("pre_requisitos") %></p>
+                                <ul>
+                                    <h3>Precios</h3>
+                                    <li>Precio UCSG: <%#Eval("precio_ucsg") %></li>
+                                    <li>Precio general: <%#Eval("precio_publico") %></li>
+                                </ul>
+                                <asp:Button runat="server" Text="Inscribirme" CssClass="btn" ID="btnInscribirme" CommandName="Inscribir"/>
+                                <asp:Label runat="server" ID="lblID" Visible="false" Text='<%#Eval("id_curso") %>'></asp:Label>
+                            </div>
                         </ItemTemplate>
-                    <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                    <SelectedItemStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
     </asp:DataList>
             </div>
         </div>
